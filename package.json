@@ -1,7 +1,11 @@
 {
-  "name": "sqlite",
+  "name": "SEN",
   "version": "0.0.0",
-  "private": true,
+  "description" : "SQLite ExpressJS NodeJS full-stack JavaScript solution",
+  "url" : "https://github.com/BillGR17/SEN",
+  "license" : "MIT",
+  "author": "https://github.com/BillGR17",
+  "private": false,
   "scripts": {
     "start": "node ./bin/www"
   },
