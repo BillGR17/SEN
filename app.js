@@ -21,7 +21,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(stylus.middleware(path.join(__dirname, 'public')));
+app.use(stylus.middleware({
+  src: path.join(__dirname, 'dev'),
+	dest: path.join(__dirname, 'public'),
+   compile: function compile(str, path) { //this will compress the css and remove all comments
+      return stylus(str).set('filename', path).set('compress', true);
+}
+ }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
